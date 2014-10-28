@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+    <title>Velkommen til SLIT</title>
+    <link rel="stylesheet" type="text/css" href="slit.css"> </link>
+    <style>
+        #container{
+                width: 300px;
+                height: 230px;
+                background-color: teal;
+                color: white;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                font-family: sans-serif;
+    </style>
+  </h:head>
+    <h:body>
+        <h:form>
+            <div id="container1">
+            <h1>Logg inn</h1>
+            <h3>Skriv inn ditt brukernavn og passord.</h3>
+            <table>
+                <tr>
+                    <td>Brukernavn:</td>
+                    <td><h:inputText value="#{brukernavn}"/></td>
+                </tr>
+                <tr>
+                    <td>Passord:</td>
+                    <td><h:inputSecret value="#{passord}"/></td>
+                </tr>
+            </table>
+            <p><h:commandButton value="Logg inn" action="velkommen"/></p>
+            </div>
+        </h:form>
+    </h:body>
+</xhtml>    

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Velkommen</title>
+        
+        <style>
+            body{
+                font-family: sans-serif;
+                background-color: darkgrey;
+            }
+            #header {
+                background-color:teal;
+                color:white;
+                text-align:center;
+                font-style: initial;
+                padding:10px;
+                font-size: 60px;
+            }
+            #nav {
+                line-height:30px;
+                background-color:#eeeeee;
+                height:300px;
+                width:100px;
+                float:left;
+                padding:5px;
+            }
+            #section {
+                border: 1px solid black;
+                width:350px;
+                padding-left: 5px;
+            }
+            #container{
+                width: 1000px;
+                height: 700px;
+                background-color: azure;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+            h6{
+                top: 75px;
+                right: 5px;
+                color: steelblue;
+                position: absolute;
+            }
+            #moduler {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                width: 50%;
+                position: absolute;
+                top: 125px;
+                left: 450px;
+        }
+
+            #moduler td, #moduler th {
+                font-size: 1em;
+                border: 1px solid black;
+                padding: 3px 7px 2px 7px;
+        }
+
+            #moduler th {
+                font-size: 1.1em;
+                text-align: left;
+                padding-top: 5px;
+                padding-bottom: 4px;
+                background-color: teal;
+                color: #ffffff;
+        }
+
+            #moduler tr.alt td {
+                color: #000000;
+                background-color: #EAF2D3;
+        }
+        </style>
+        
+    </h:head>
+    <h:body>
+        
+        <div id="container">
+                <h1 id="header">Velkommen til SLIT!<br>
+                </br></h1>
+            <h6>Du er logget inn som: #{brukernavn}</h6>
+            <div id="section">
+            <h2>Hensikt og formål</h2><hr></hr>
+            <p>I et få antall emner er det lagt opp til et modulbasert læringssystem der studentene løser og leverer oppgaver i et individuelt tempo.
+               Den grunnleggende ideen bak dette opplegget er å gi studentene mer frihet kombinert med mer ansvar for egen læring.
+            </p>
+            <p>Målet er å øke motivasjonen og samtidig bidra til bedre læringsutbytte for studentene ettersom de kan sette seg inn i teorien løse oppgavene i det tempoet som passer en selv best.</p>
+            <p>Klikk til høyre for å gå til modul</p>
+            </div>
+            
+            <table id="moduler" height="305">
+                <tr><th>Moduler</th></tr>
+                <tr><td><a href="modul.xhtml">Modul 1</a></td></tr>
+                <tr><td><a href="modul.xhtml">Modul 2</a></td></tr>
+                <tr><td><a href="modul.xhtml">Modul 3</a></td></tr>
+                <tr><td><a href="modul.xhtml">Modul 4</a></td></tr>
+                <tr><td><a href="modul.xhtml">Modul 5</a></td></tr>
+                <tr><td><a href="modul.xhtml">Modul 6</a></td></tr>
+            </table>
+        </div>
+    </h:body>
+</xhtml>
