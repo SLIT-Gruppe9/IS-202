@@ -1,0 +1,6 @@
+build/
+build/web
+dist/
+nbproject/
+nbproject/private
+nbproject/private/private.properties

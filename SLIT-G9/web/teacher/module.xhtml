@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+
+    <!-- Module - View and edit existing module - teacher page -->
+        
+    
+  
+   
+
+
+
+    
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+            
+          <!-- jquery -->
+              <h:outputScript target="head">
+                $ = jQuery;
+                // Then you can use it
+                $(document).ready(function() {
+                 $("#myform\\:date").datepicker();
+
+                 console.log("jquery running...");
+                });
+                </h:outputScript>
+          
+          
+                <h:form enctype="multipart/form-data" id="myform">
+             <table class="inputform" id="mytable">
+            <tr>
+                <th>#{uistrings.module_name} </th>
+              <td><h:inputText id="module_name" value="#{moduleBean.selectedModule.name}" size="30"/></td>
+            </tr>
+            <tr>
+                <th>#{uistrings.module_description} </th>
+              <td><h:inputTextarea id="module_description" value="#{moduleBean.selectedModule.description}" rows="20"/>
+              </td>
+              </tr>
+                 
+                 <tr><th>Frist</th>
+                     <td><h:inputText id="date"/></td>
+                 </tr>
+                 
+                <tr>
+                    <th>#{uistrings.resource}</th>
+                   <td>
+                       <t:inputFileUpload label="Select File" value="#{moduleBean.upload}"/>
+                   </td></tr>
+                 
+            <tr>
+                <td>
+                      <h:commandButton value="Save" action="#{moduleBean.saveSelectedModule()}"/>
+              </td>
+                <td><h:commandButton value="Delete" action="#{moduleBean.deleteSelectedModule()}"/></td>
+              </tr>
+          </table>                                
+          </h:form>
+
+         
+      </ui:define>
+
+        
+        <!-- include menu -->
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

@@ -1,0 +1,183 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12.nov.2014, 02:20:39
+    Author     : Criyonit K
+*/
+
+.discusBox {
+  border: #333 solid 1px;
+  height: 120px;
+  width: 720px;
+  position: relative;
+  background-color: #fff;
+}
+
+.discusTitle {
+  line-height: 40px;
+  padding-left: 6px;
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 600px;
+  vertical-align: middle;
+}
+
+.discusTitle h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.discusBrief {
+  height: 60px;
+  width: 600px;
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  overflow: hidden;
+}
+.discusBrief p { padding-left: 6px; }
+
+.discusMeta {
+  height: 20px;
+  width: 600px;
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  font-size: 11px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.discusMetaPostedOn, .discusBy {
+  display: inline;
+  float: left;
+}
+
+.discusMetaPostedOn {
+  padding-left: 6px;
+  margin-right: 24px;
+}
+.discusMetaPostedOn p { margin-bottom: 0;}
+
+.discusBy { }
+
+.discusLink {
+  float: right;
+  background-color: #2fb7e0; 
+  width: 120px;
+  text-align: center;
+}
+
+.discusLink a{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+body{
+	width: 1000px;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-family: sans-serif;
+}
+
+h1{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header{
+	background: #00795f;
+	width: 100%;
+	padding: 40px 0;
+	color: white;
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.nav-ul{
+	background-color: #43a286;
+	overflow: hidden;
+	color: white;
+	padding: 0;
+	text-align: center;
+	margin: 0;
+}
+nav ul li{
+	display: inline-block;
+	padding: 20px;
+}
+nav ul li:hover{
+	background-color: #399077;
+}
+
+#moduler {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 50%;
+    position: absolute;
+}
+
+* {
+margin: 0;
+padding: 0;
+}
+
+#wrap {
+background: url('gfx/bg.png') repeat-y #fff;
+height: 400px;
+width: 400px;
+}
+
+#menu {
+height: 100px;
+width: 400px;
+}
+
+#content {
+height: 300px;
+width: 400px;
+}
+
+section{
+	line-height: 1.5em;
+	font-size: 0.9em;
+	padding: 40px;
+	width: 75%;
+	margin: 0 auto;
+}
+.handle{
+	width: 100%;
+	background: #005c48;
+	text-align: left;
+	box-sizing: border-box;
+	padding: 15px 10px;
+	cursor: pointer;
+	color: white;
+	display: none;
+}
+@media screen and (max-width: 580px){
+	nav ul{
+		max-height: 0px;
+	}
+	.showing{
+		max-height: 20em;
+	}
+	nav ul li{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 15px;
+		text-align: left;
+	}
+	.handle{
+		display: block;
+	}
+}
+

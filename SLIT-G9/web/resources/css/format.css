@@ -1,0 +1,160 @@
+.layout-version h2{
+    float:left;
+}
+
+.layout-version p{
+    padding-top:10px;
+    padding-left: 5px;
+    float:right;
+    color:gray;
+}
+
+/* Status */
+
+.layout-status { 
+    //margin:0 auto;
+   display: inline-block;
+   text-align: center;
+   padding-top:8px;
+}
+
+.layout-logout {
+   // width: 20%;
+    float:right;
+    padding-right:10px;
+    padding-top:10px;
+    display:inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.layout-logout a{
+    color:white;
+}
+
+.layout-version a{   
+    color:white;
+}
+
+.layout-sidebar {
+    width:20%;
+    float: left;
+}
+
+/* Login */
+.layout-login {
+
+    border: thin solid gray;
+    margin: 0px auto;
+    width: 50%;
+    padding:15px;
+    height: auto;
+    margin-top: 10%;
+}
+
+/* Menus */
+
+/*.layout-menu {
+    
+    width: 50%;
+    margin: 0 auto;
+}*/
+
+.layout-menu ul {
+  list-style-type: none;
+  padding-left: 0em;
+}
+.layout-menu ul ul {
+  list-style-type: none;
+  padding-left: 20em;
+
+}
+
+.layout-menu ul li {
+    margin-left: 5px;
+    display:inline;
+}
+/* Footer */
+.layout-footer {
+  border-top:thin solid #000;
+  border-bottom: thin solid #000;
+  position:absolute;
+  bottom:0;
+  padding-top:5px;
+}
+.layout-footer p {
+  padding:10px;
+  margin:0;
+}
+
+/* Page content */
+.layout-content {
+}
+
+/* Data Tables */
+table.data {
+  width: 90%;
+  margin: 10px;
+  border: thin solid black;
+  border-collapse: collapse;
+}
+
+table.data th, table.data td {
+  text-align: left;
+  border: thin solid black;
+  padding: 4px;
+}
+
+/* Forms using tables for layout */
+th.prompt {
+  text-align: right;
+}
+
+td.input {
+  text-align: left;
+}
+
+/* Input forms like module.xhtml, editnews.xhtml etc */
+.inputform {
+    //background: white;
+    border: 1px solid black;
+    
+}
+.inputform td{
+    text-align:center;
+    border:1px solid black;
+}
+.inputform th{
+    background-color: #5D86B3;
+    color: white;
+
+}
+.inputform button {
+    text-align: right;
+}
+
+.modulelist {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modulelist td, .modulelist th {
+    font-size: 0.8em;
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+.modulelist th {
+    font-size: 1.0em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #5D86B3;
+    color: #ffffff;
+}
+
+.modulelist tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}

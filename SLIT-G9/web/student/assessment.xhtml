@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+    <!-- Assessment - Create a new Assessment as Student -->
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+          <h3>#{uistrings.assessment}</h3>
+                   <h:form enctype="multipart/form-data">
+             <table class="inputform">
+            <tr>
+                <th>#{uistrings.module_name} </th>
+                <td><h:inputText readonly="true" id="module_name" value="#{assessmentBean.selectedAssessment.module.name}"/></td>
+            </tr>
+                 <tr>
+                     <th>#{uistrings.module_description}</th>
+                     <td><h:inputText readonly="true" id="module_description" value="#{assessmentBean.selectedAssessment.module.description}"/></td>
+                 </tr>
+             <tr>
+                <th>#{uistrings.student_name} </th>
+                <td><h:inputText readonly="true" id="student_name" value="#{assessmentBean.selectedAssessment.student.username}"/></td>
+              </tr>     
+                    <tr>
+                <th>#{uistrings.assessment_text} </th>
+                <td><h:inputTextarea id="assessment_text" value="#{assessmentBean.selectedAssessment.description}" rows="10"/>
+              </td>
+              </tr>
+                  <tr>
+                    <th>#{uistrings.resource}</th>
+                   <td>
+                       <t:inputFileUpload label="Select File" value="#{assessmentBean.upload}"/>
+                   </td></tr>
+                 
+            <tr>
+                <td>
+                      <h:commandButton value="Save"
+                                       action="#{assessmentBean.saveSelectedAssessment()}"/>
+              </td>
+              </tr>
+          </table>                                
+          </h:form>
+      </ui:define>
+
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

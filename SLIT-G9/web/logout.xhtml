@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <!-- This is the start (home) page of the application. It just displays
+  a message. Not very exciting... improvement is possible. -->
+  <h:head>
+    <title>#{uistrings.logout_title}</title>
+    <h:outputStylesheet name="layout.css" library="css" />
+    <h:outputStylesheet name="format.css" library="css" />
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/loginlayout.xhtml">
+      <ui:define name="content">
+
+        <img src="resources/img/logo.jpg"></img>
+        <h1>Du er logged ut </h1>
+        <h:form>
+        <h:commandLink action="/index?faces-redirect=true" value="#{uistrings.login}"/>
+        </h:form>
+      </ui:define>
+      <ui:define name="menuitems">
+        <li><h:link value="#{uistrings.cancel}" outcome="index"/></li>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>

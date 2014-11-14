@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+    <!-- Views - View and edit Views items - teacher page -->
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+          
+                <h:form enctype="multipart/form-data">
+                    <table class="inputform">
+            <tr>
+                <th>#{uistrings.news_title} </th></tr>
+                        <tr>
+                <td><h:inputText id="news_title" value="#{newsBean.selectedNews.title}" size="30"/></td>
+            </tr>
+            <tr>
+                <th>#{uistrings.news_text} </th></tr>
+                        <tr>
+                <td><h:inputTextarea id="news_text" value="#{newsBean.selectedNews.value}" rows="20" label="#{uistrings.news_text}"/>
+              </td>
+              </tr>
+   
+                 
+            <tr>
+                <td>
+                      <h:commandButton value="Save"
+                                       action="#{newsBean.saveSelectedNews()}"/>
+             
+              
+                      <h:commandButton value="Delete"
+                                       action="#{newsBean.deleteSelectedNews()}"/>
+              </td>
+                
+              </tr>
+          </table>                                
+          </h:form>
+
+         
+      </ui:define>
+
+        
+        <!-- include menu -->
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

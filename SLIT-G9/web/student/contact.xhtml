@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+
+          
+          <p></p>
+    <form>
+          <table>
+            <tr>
+              <th>#{uistrings.firstname}: </th>
+              <td><input type="text" name="Fornavn"/></td>
+            </tr>
+     <p></p>
+
+             <tr>
+              <th>#{uistrings.lastname}: </th>
+              <td><input type="text" name="Etternavn"/></td>
+            </tr>
+
+       <p></p>
+               <tr>
+              <th class="contact">#{uistrings.message}: </th>
+              <td><textarea id="textarea" rows="10" cols="50" name="message"/>
+                
+                  <p></p>
+                  <td><input type="submit" value="Send melding"/> </td>
+            
+
+             </td>
+            </tr>
+          </table>
+          </form>   
+          
+      </ui:define>
+
+      <ui:define name="menuitems">
+        <ui:include src="/student/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+   <h3>#{uistrings.news_list_header}</h3>
+          
+   <li><h:form><h:commandLink action="#{newsBean.createNews()}"
+                                             value="#{uistrings.create_news}" /></h:form></li>
+                                          
+                                             
+              
+          <!-- List all modules -->
+          <h2>#{uistrings.news_list_header}</h2>
+          <h:dataTable value="#{newsBean.allNews}" var="news" styleClass="data" class="modulelist">    <!-- throws exception -->
+            <h:column>
+                <f:facet name="header">#{uistrings.news_title}</f:facet>
+                <h:form><h:commandLink action="#{newsBean.editNews(news.id)}" value="#{news.title}">
+                         <f:param name="id" value="#{news.id}"/>
+                    </h:commandLink>
+              </h:form>
+
+          </h:column>
+          <h:column>
+              <f:facet name="header">#{uistrings.news_text}</f:facet>
+            #{news.value}
+          </h:column>
+        </h:dataTable>
+      </ui:define>
+
+        
+        <!-- include menu -->
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

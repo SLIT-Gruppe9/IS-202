@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+    <!-- Module - View modules - student page -->
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+          
+                <h:form enctype="multipart/form-data">
+             <table class="inputform">
+            <tr>
+                <th>#{uistrings.module_name} </th>
+                <td><h:inputText readonly="true" id="module_name" value="#{moduleBean.selectedModule.name}" size="30"/></td>
+            </tr>
+            <tr>
+                <th>#{uistrings.module_description} </th>
+                <td><h:inputTextarea readonly="true" id="module_description" value="#{moduleBean.selectedModule.description}" rows="20"/>
+              </td>
+              </tr>
+                 <tr>
+                     <th>Last ned ressurser</th>
+                     <td>
+                #{moduleBean.selectedModule.file.filename} (#{moduleBean.selectedModule.file.contentType})
+                <h:commandLink value='Download' action='#{downloadBean.downloadFile(moduleBean.selectedModule.file.id)}'/>
+                     </td>
+                 </tr>
+                 <tr>
+                     <th>#{uistrings.deliver}</th>
+                     <td><h:commandLink value="New Assessment" action="#{assessmentBean.createAssessment(moduleBean.selectedModule, authInfoBean.userName)}" >
+                            
+                         </h:commandLink></td>
+                 </tr>
+          </table>                                
+          </h:form>
+
+         
+      </ui:define>
+
+        
+        <!-- include menu -->
+    <ui:define name="menuitems">
+        <ui:include src="/student/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

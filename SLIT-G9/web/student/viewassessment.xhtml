@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+    <!-- View assessment as Student -->
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+          <h3>#{uistrings.assessment}</h3>
+                   
+             <table class="inputform">
+                 <h:form enctype="multipart/form-data">
+            <tr>
+                <th>#{uistrings.module_name} </th>
+                <td><p>#{assessmentBean.selectedAssessment.module.name}</p></td>
+            </tr>
+             <tr>
+                <th>#{uistrings.student_name} </th>
+                <td><p>#{assessmentBean.selectedAssessment.student.username}</p></td>
+              </tr>     
+                  <tr>
+                      <th>#{uistrings.assessment_text} </th>
+                      <td><h:inputTextarea readonly="true" id="student_comment" value="#{assessmentBean.selectedAssessment.description}" rows="10"/>
+              </td>
+              </tr>
+            <tr>
+                <th>#{uistrings.teacher_comment} </th>
+                <td><h:inputTextarea id="teacher_comment" readonly="true" value="#{assessmentBean.selectedAssessment.teachersComment}" rows="10"/>
+              </td>
+              </tr>
+                <tr>
+                    <th>#{uistrings.resource}</th>
+                   <td>
+                       <h:form rendered="#{! (empty assessmentBean.selectedAssessment.file)}">
+                #{assessmentBean.selectedAssessment.file.filename} (#{assessmentBean.selectedAssessment.file.contentType}) #{uistrings.size}: #{assessmentBean.selectedAssessment.file.filesize} bytes
+                <h:commandLink value='Download' action='#{downloadBean.downloadFile(assessmentBean.selectedAssessment.file.id)}'/>
+        </h:form>
+                   </td></tr>
+                 <tr>
+                         <th>#{uistrings.teacher_approved}</th>
+                         <td>
+                         <p>Status: #{assessmentBean.selectedAssessment.approved}</p>
+                 </td></tr>
+                 
+              </h:form>
+             </table>                                
+          
+      </ui:define>
+
+    <ui:define name="menuitems">
+        <ui:include src="/student/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Student Modules</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+   <h3>#{uistrings.module_list_header}</h3>
+          
+          
+                                          
+                                             
+              
+          <!-- List all modules -->
+        <h2>#{uistrings.modules}</h2>
+        <h:dataTable value="#{moduleBean.allModules}" var="module" styleClass="data" class="modulelist"> 
+            <h:column>
+              <f:facet name="header">#{uistrings.module_no}</f:facet>
+                <h:form><h:commandLink action="#{moduleBean.viewModule(module.id)}" value="#{module.id}">
+                         <f:param name="id" value="#{module.id}"/>
+                    </h:commandLink>
+              </h:form>
+
+          </h:column>
+            <h:column>
+              <f:facet name="header">#{uistrings.module_name}</f:facet>
+            #{module.name}
+          </h:column>
+          <h:column>
+              <f:facet name="header">#{uistrings.module_description}</f:facet>
+            #{module.shortDescription}
+          </h:column>
+          <h:column>
+              <f:facet name="header">#{uistrings.resource}</f:facet>
+            
+            <h:form rendered="#{! (empty module.file)}">
+                #{module.file.filename} (#{module.file.contentType}) #{uistrings.size}: #{module.file.filesize} byte
+                <h:commandLink value='Download' action='#{downloadBean.downloadFile(module.file.id)}'/>
+        </h:form>
+          </h:column>
+        </h:dataTable>
+      </ui:define>
+
+        
+        <!-- include menu -->
+    <ui:define name="menuitems">
+        <ui:include src="/student/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

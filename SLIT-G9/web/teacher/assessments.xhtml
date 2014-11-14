@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+    <!-- Assessments - List all Assessments, sort by module -->
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+          
+                                          
+                                             
+          
+        <!-- List all modules -->
+        <h2>#{uistrings.assessment}</h2>
+        <h:dataTable value="#{assessmentBean.allAssessments}" var="assessment" styleClass="data" class="modulelist"> 
+            <h:column>
+                <f:facet name="header">#{uistrings.assessment_no}</f:facet>
+                <h:form><h:commandLink action="#{assessmentBean.editAssessment(assessment.id)}" value="#{assessment.id}">
+                         <f:param name="id" value="#{assessment.id}"/>
+                    </h:commandLink>
+              </h:form>
+
+          </h:column>
+            <h:column>
+              <f:facet name="header">#{uistrings.module_name}</f:facet>
+            #{assessment.module.name}
+          </h:column>
+          <h:column>
+              <f:facet name="header">#{uistrings.student_name}</f:facet>
+            #{assessment.student.username}
+          </h:column>
+        <h:column>
+            <f:facet name="header">#{uistrings.approved}</f:facet>
+            #{assessment.approved}
+          </h:column>            
+
+        </h:dataTable>
+      </ui:define>
+
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

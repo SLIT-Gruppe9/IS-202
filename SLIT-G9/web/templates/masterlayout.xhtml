@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- This template defines the layout for all pages in the SLIT
+  application -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+  <h:head>
+    <title>#{uistrings.app_abbrev}</title>
+    
+    <!-- CSS -->
+    <h:outputStylesheet library="css" name="format.css" />
+    <h:outputStylesheet library="css" name="bootstrap.css" />
+   <!--  <h:outputStylesheet library="css" name="jquery-ui.css" /> -->
+
+      <h:outputStylesheet library="css" name="jquery-ui.css" />
+      
+       <!-- Script -->
+      <script type="text/javascript" src="/slit/resources/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/slit/resources/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="/slit/resources/bootstrap/js/bootstrap.js"></script>
+  </h:head>
+    <style>
+        /*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12.nov.2014, 02:20:39
+    Author     : Criyonit K
+*/
+
+.discusBox {
+  border: #333 solid 1px;
+  height: 120px;
+  width: 720px;
+  position: relative;
+  background-color: #fff;
+}
+body{
+	width: 1000px;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-family: sans-serif;
+}
+
+#header{
+	background: #2B4167;
+	width: 100%;
+	padding: 40px 0;
+	color: white;
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+section{
+	line-height: 1.5em;
+	font-size: 0.9em;
+	padding: 40px;
+	width: 75%;
+	margin: 0 auto;
+}
+   /* Begin Navigation Bar Styling */
+   #nav {
+      width: 100%;
+      float: left;
+      margin: 0 0 3em 0;
+      padding: 0;
+      list-style: none;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc; 
+      border-top: 1px solid #ccc; }
+   #nav li {
+      float: left; }
+   #nav li a {
+      display: block;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #069;
+      border-right: 1px solid #ccc; }
+   #nav li a:hover {
+      color: #c00;
+      background-color: #fff; }
+   /* End navigation bar styling. */
+    </style>
+  <h:body>
+      <h1 id="header"> SLIT - Støtte for Læring i Individuelt Tempo</h1>  
+        <nav>
+        <ul id="nav">
+        <li><h:link value="Hjem" outcome="/teacher/index"/></li> 
+        <li><h:link value="Beskjeder" outcome="/teacher/newslist"/></li>    
+        <li><h:link value="Moduler" outcome="/teacher/modules"/></li>
+        <li><h:link value="Status" outcome="/teacher/status"/></li>
+        <li><h:link value="Vurdering" outcome="/teacher/assessments"/></li>
+        <!-- Admin dropdown -->
+        <li><h:link value="Bruker Administrasjon" outcome="/admin/users"/></li> <!-- Bruker Adm.-->
+        <li><h:link value="Ny Bruker" outcome="/admin/user"/></li>
+        </ul>
+        </nav>
+          
+      <section>
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+          <ui:insert name="content">
+            <ui:include src="/templates/nocontent.xhtml" />
+          </ui:insert>
+      </div>
+
+      <!-- News -->
+       <!-- ui:repeat looper gjennom alle news -->
+       <div class="row">
+            <ui:repeat value="#{newsBean.allNews}" var="news">
+         <div class="span4">
+          <h2>#{news.title}</h2>
+          <p>#{news.value}</p>
+          <!--<p><a class="btn" href="#">View details &raquo;</a></p> -->
+        </div>
+          </ui:repeat>
+
+        </div> <!-- /container -->
+
+    </section>
+  </h:body>
+</html>
