@@ -73,12 +73,13 @@ section{
    /* Begin Navigation Bar Styling */
    #nav {
       clear: both;
-      float: left;
       list-style: none;
       background-color: #f2f2f2;
       border-bottom: 1px solid #ccc; 
       border-top: 1px solid #ccc;
-      width: 96%;
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
    }
    #nav li {
       float: left; }
@@ -97,14 +98,9 @@ section{
       <h1 id="header"> SLIT - Støtte for Læring i Individuelt Tempo</h1>  
         <nav>
         <ul id="nav">
-        <li><h:link value="Hjem" outcome="/teacher/index"/></li> 
-        <li><h:link value="Beskjeder" outcome="/teacher/newslist"/></li>    
-        <li><h:link value="Moduler" outcome="/teacher/modules"/></li>
-        <li><h:link value="Status" outcome="/teacher/status"/></li>
-        <li><h:link value="Vurdering" outcome="/teacher/assessments"/></li>
-        <!-- Admin dropdown -->
-        <li><h:link value="Bruker Administrasjon" outcome="/admin/users"/></li> <!-- Bruker Adm.-->
-        <li><h:link value="Ny Bruker" outcome="/admin/user"/></li>
+        <li><h:link value="Hjem" outcome="/student/index"/></li>    
+        <li><h:link value="Moduler" outcome="/student/modules"/></li>
+        <li><h:link value="Status" outcome="/student/studentstatus"/></li>
         </ul>
         </nav>
           

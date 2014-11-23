@@ -11,33 +11,32 @@
   <h:body>
     <ui:composition template="/templates/masterlayout.xhtml">
       <ui:define name="content">
+          <h3>Klikk på endre for å redigere vurdering.</h3>
           
+             <li><h:form><h:commandLink action="#{moduleBean.createModule()}"
+                                             value="Endre" /></h:form></li>
                                           
                                              
           
         <!-- List all modules -->
         <h2>#{uistrings.assessment}</h2>
         <h:dataTable value="#{assessmentBean.allAssessments}" var="assessment" styleClass="data" class="modulelist"> 
+            
             <h:column>
-                <f:facet name="header">#{uistrings.assessment_no}</f:facet>
-                <h:form><h:commandLink action="#{assessmentBean.editAssessment(assessment.id)}" value="#{assessment.id}">
-                         <f:param name="id" value="#{assessment.id}"/>
-                    </h:commandLink>
-              </h:form>
-
-          </h:column>
-            <h:column>
-              <f:facet name="header">#{uistrings.module_name}</f:facet>
+              <f:facet name="header">Modul ID</f:facet>
             #{assessment.module.name}
           </h:column>
           <h:column>
-              <f:facet name="header">#{uistrings.student_name}</f:facet>
+              <f:facet name="header">Modul Nummer</f:facet>
             #{assessment.student.username}
           </h:column>
         <h:column>
-            <f:facet name="header">#{uistrings.approved}</f:facet>
+            <f:facet name="header">Student Navn</f:facet>
             #{assessment.approved}
-          </h:column>            
+          </h:column>
+          <h:column>
+            <f:facet name="header">Vurdering</f:facet>
+          </h:column>
 
         </h:dataTable>
       </ui:define>

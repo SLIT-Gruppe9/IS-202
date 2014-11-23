@@ -17,6 +17,10 @@
         <li><h:link value="#{uistrings.module_list_header}" outcome="/student/modules"/></li>
         <li><h:link value="#{uistrings.my_assessments}" outcome="/student/listassessments"/></li>
         <li><h:link value="#{uistrings.contact}" outcome="/student/contact"/></li>
+    
+    <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
     </ui:composition>
   </h:body>
 </html>

@@ -77,13 +77,12 @@ section{
     <!-- This is the systems main menu. Some pages may want to change the menu
     so it is defined in a separate file, to make it easier to override. -->
     <ui:composition>
-        <nav>
+        <nav>                                           
             <ul>
         <li><h:link value="Beskjeder" outcome="/teacher/newslist"/></li>    
         <li><h:link value="Moduler" outcome="/teacher/modules"/></li>
         <li><h:link value="Status" outcome="/teacher/status"/></li>
         <li><h:link value="Vurdering" outcome="/teacher/assessments"/></li>
-        <!-- Admin dropdown -->
         <a href="#">#{uistrings.admin_pages}</a>
         <li><h:link value="Bruker Administrasjon" outcome="/admin/users"/></li> <!-- Bruker Adm.-->
             <!-- hvis vi er på users.xhtml, vis newuser linken -->

@@ -8,7 +8,7 @@
     <title>Facelet Title</title>
   </h:head>
   <h:body>
-    <ui:composition template="/templates/masterlayout.xhtml">
+    <ui:composition template="/student/studenttemplate.xhtml">
       <ui:define name="content">
         <h2>#{uistrings.modules}</h2>
         <h3>#{uistrings.module_list_header}</h3>
@@ -17,10 +17,7 @@
             <f:facet name="header">Modul ID</f:facet>
           </h:column>
           <h:column>
-            <f:facet name="header">Modul nummer</f:facet>
-          </h:column>
-          <h:column>
-            <f:facet name="header">Student Navn</f:facet>
+            <f:facet name="header">Modul Navn</f:facet>
           </h:column>
           <h:column>
             <f:facet name="header">Vurdering</f:facet>

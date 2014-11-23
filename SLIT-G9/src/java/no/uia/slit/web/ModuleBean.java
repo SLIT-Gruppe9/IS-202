@@ -99,7 +99,8 @@ public class ModuleBean implements Serializable {
         moduleSvc.save(selectedModule, newFile);
         }else {
          //No files attached, save module without resource.
-        moduleSvc.save(selectedModule, null);
+        System.out.println("Saving "+ selectedModule);
+            moduleSvc.save(selectedModule, null);
         }
         
      //  System.out.print("Saved module:" +selectedModule.getName());

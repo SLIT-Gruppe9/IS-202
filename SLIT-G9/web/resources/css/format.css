@@ -46,10 +46,12 @@
 
     border: thin solid gray;
     margin: 0px auto;
-    width: 50%;
+    width: 30%;
     padding:15px;
-    height: auto;
+    height: 100px;
     margin-top: 10%;
+    background-color: #E7E9F4;
+    font-family: sans-serif;
 }
 
 /* Menus */
@@ -117,16 +119,16 @@ td.input {
 /* Input forms like module.xhtml, editnews.xhtml etc */
 .inputform {
     //background: white;
-    border: 1px solid black;
+    border: 1px solid #0A3473;
     
 }
 .inputform td{
     text-align:center;
-    border:1px solid black;
+    border:1px solid #6A7AC8;
 }
 .inputform th{
-    background-color: #5D86B3;
-    color: white;
+    background-color: #6A7AC8;
+    color: #84ACC8;
 
 }
 .inputform button {
@@ -141,7 +143,7 @@ td.input {
 
 .modulelist td, .modulelist th {
     font-size: 0.8em;
-    border: 1px solid #98bf21;
+    border: 1px solid #0B0B0B;
     padding: 3px 7px 2px 7px;
 }
 
