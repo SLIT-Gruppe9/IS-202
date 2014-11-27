@@ -8,17 +8,30 @@
   <!-- This is the start (home) page of the application. It just displays
   a message. Not very exciting... improvement is possible. -->
   <h:head>
-    <title>#{uistrings.logout_title}</title>
+    <title>${uistrings.login_title}</title>
     <h:outputStylesheet name="layout.css" library="css" />
     <h:outputStylesheet name="format.css" library="css" />
   </h:head>
   <h:body>
     <ui:composition template="/templates/loginlayout.xhtml">
       <ui:define name="content">
-        <h1>Du er logget ut </h1>
-        <h:form>
-        <h:commandLink action="/index?faces-redirect=true" value="#{uistrings.login}"/>
-        </h:form>
+        <!-- <h2>${uistrings.login_title}</h2> -->
+        <form method="POST" action="j_security_check">
+          <table>
+            <tr>
+              <th class="prompt">#{uistrings.username}: </th>
+              <td><input type="text" name="j_username"/></td>
+            </tr>
+            <tr>
+              <th class="prompt">#{uistrings.password}: </th>
+              <td><input type="password" name="j_password"/>
+              <input type="submit" value="Login"/>
+              </td>
+              
+            </tr>
+          </table>
+          
+        </form>
       </ui:define>
       <ui:define name="menuitems">
         <li><h:link value="#{uistrings.cancel}" outcome="index"/></li>
