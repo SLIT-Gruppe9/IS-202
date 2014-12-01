@@ -11,6 +11,16 @@
 
   <h:head>
     <title>#{uistrings.app_abbrev}</title>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script>
+$(function(){
+  $('a').each(function() {
+    if ($(this).prop('href') == window.location.href) {
+      $(this).addClass('current');
+    }
+  });
+});
+</script>
     
     <!-- CSS -->
     <h:outputStylesheet library="css" name="format.css" />
@@ -69,32 +79,58 @@ section{
 	font-size: 0.9em;
 	padding: 70px;
 	width: 75%;
+        position: absolute;
+        left: 5%;
 }
    /* Begin Navigation Bar Styling */
    #nav {
       clear: both;
-      float: left;
       list-style: none;
       background-color: #f2f2f2;
       border-bottom: 1px solid #ccc; 
       border-top: 1px solid #ccc;
-      width: 96%;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      position: absolute;
+      width: 958px;
+      top: 15%;
+      left: 0px;
    }
    #nav li {
       float: left; }
    #nav li a {
       display: block;
-      padding: 8px 15px;
+      padding: 15px 28.5px;
       text-decoration: none;
       font-weight: bold;
-      color: #069;
-      border-right: 1px solid #ccc; }
+      color: #040A3F;
+      border-right: 1px solid #ccc;
+   }
    #nav li a:hover {
-      background-color: #fff; }
+      background-color: #2B4167;
+      color: #ffffff;
+   }
+      a.current {
+background:#2B4167;
+color:#ffffff;
+}
+
+.hjem h.hjem,
+.beskjeder h.beskjeder
+.moduler h.moduler,
+.status h.status,
+.besvarelse h.besvarelse
+.vurdering h.vurdering
+{
+   background: #2B4167;
+    color:#ffffff;
+}
    /* End navigation bar styling. */
     </style>
   <h:body>
-      <h1 id="header"> SLIT - Støtte for Læring i Individuelt Tempo</h1>  
+      <h1 id="header"> SLIT - Støtte for Læring i Individuelt Tempo</h1>
+      <div style="border-left: dotted 3px #CCC; height:700px;">
+      <div style="border-right: dotted 3px #CCC; height:700px;">
         <nav>
         <ul id="nav">
         <li><h:link value="Hjem" outcome="/teacher/index"/></li> 
@@ -130,5 +166,7 @@ section{
         </div> <!-- /container -->
 
     </section>
+      </div>
+      </div>
   </h:body>
 </html>
