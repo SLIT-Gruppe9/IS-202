@@ -16,16 +16,16 @@
     <ui:composition template="/templates/loginlayout.xhtml">
       <ui:define name="content">
         <!-- <h2>${uistrings.login_title}</h2> -->
-        <form method="POST" action="j_security_check">
+        <form method="POST" action="j_security_check"> <!-- autentisering -->
           <table>
             <tr>
-              <th class="prompt">#{uistrings.username}: </th>
+              <th class="prompt">#{uistrings.username}: </th> <!-- brukernavn -->
               <td><input type="text" name="j_username"/></td>
             </tr>
             <tr>
               <th class="prompt">#{uistrings.password}: </th>
-              <td><input type="password" name="j_password"/>
-              <input type="submit" value="Login"/>
+              <td><input type="password" name="j_password"/> <!-- passord -->
+              <input type="submit" value="Login"/> <!-- logg inn-knapp -->
               </td>
               
             </tr>

@@ -10,22 +10,22 @@
     <!-- Assessment - Create a new Assessment as Student -->
   </h:head>
   <h:body>
-    <ui:composition template="/student/studenttemplate.xhtml">
-      <ui:define name="content">
-          <h3>#{uistrings.assessment}</h3>
+    <ui:composition template="/student/studenttemplate.xhtml"> <!-- student menyen -->
+      <ui:define name="content"> <!-- innholdet under menyen -->
+          <h3>#{uistrings.assessment}</h3> <!-- tittel "Vurdering" -->
                    <h:form enctype="multipart/form-data">
-             <table class="inputform">
+             <table class="inputform"> <!-- tabell for å opprette moduler -->
             <tr>
-                <th>#{uistrings.module_name} </th>
-                <td><h:inputText readonly="true" id="module_name" value="#{assessmentBean.selectedAssessment.module.name}"/></td>
+                <th>#{uistrings.module_name} </th> <!-- skriften "Modul" -->
+                <td><h:inputText readonly="true" id="module_name" value="#{assessmentBean.selectedAssessment.module.name}"/></td> <!-- Modulernavn -->
             </tr>
                  <tr>
-                     <th>#{uistrings.module_description}</th>
+                     <th>#{uistrings.module_description}</th> <!-- beskrivelse -->
                      <td><h:inputText readonly="true" id="module_description" value="#{assessmentBean.selectedAssessment.module.description}"/></td>
                  </tr>
              <tr>
                 <th>#{uistrings.student_name} </th>
-                <td><h:inputText readonly="true" id="student_name" value="#{assessmentBean.selectedAssessment.student.username}"/></td>
+                <td><h:inputText readonly="true" id="student_name" value="#{assessmentBean.selectedAssessment.student.username}"/></td> <!-- studentnavn -->
               </tr>     
                     <tr>
                 <th>#{uistrings.assessment_text} </th>

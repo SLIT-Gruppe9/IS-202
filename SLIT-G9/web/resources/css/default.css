@@ -1,11 +1,13 @@
+/*kropp*/
 body {
-    background-color: #ffffff;
+    background-color: #ffffff; /*hvit bakgrunn*/
     font-size: 12px;
-    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif; /*skrift type*/
     color: #000000;  
     margin: 10px;
 }
 
+/*overskrift*/
 h1 {
     font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
     border-bottom: 1px solid #AFAFAF; 
@@ -16,13 +18,14 @@ h1 {
     color: #D20005;
 }
 
+/* skille farge fra brukt link og ikke */
 a:link, a:visited {
   color: #045491;
   font-weight : bold;
   text-decoration: none;
 }
 
-a:link:hover, a:visited:hover  {
+a:link:hover, a:visited:hover  { /* når mus over */
   color: #045491;
   font-weight : bold;
   text-decoration : underline;

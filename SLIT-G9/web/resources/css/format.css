@@ -118,7 +118,7 @@ td.input {
 
 /* Input forms like module.xhtml, editnews.xhtml etc */
 .inputform {
-    //background: white;
+    //background:
     border: 1px solid #0A3473;
     
 }
@@ -129,7 +129,6 @@ td.input {
 .inputform th{
     background-color: #070238;
     color: #FCFDFD;
-
 }
 .inputform button {
     text-align: right;

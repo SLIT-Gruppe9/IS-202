@@ -8,6 +8,9 @@ and open the template in the editor.
     Author     : Criyonit K
 */
 
+/*
+Hoved css fil for slit. Sider på systemet bruker denne
+*/
 .discusBox {
   border: #333 solid 1px;
   height: 120px;
@@ -77,32 +80,36 @@ and open the template in the editor.
   text-decoration: none;
   display: block;
 }
+/*Kroppen for nettsiden */
 body{
-	width: 1000px;
-	height: 700px;
+	width: 1000px; /* bredden på container*/
+	height: 700px; /* høyden på container*/
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	font-family: sans-serif;
 }
 
+/*Overskrift*/
 h1{
     font-size: 28px;
-    font-weight: bold;
+    font-weight: bold; /* tykk tekst*/
 }
 
+/* hodet*/
 header{
-	background: #00795f;
+	background: #00795f;    /*mørkeblå*/
 	width: 100%;
 	padding: 40px 0;
-	color: white;
-	text-align: center;
+	color: white;           /*skrift farge*/
+	text-align: center;         /*sentrert tekst*/
 }
 
 a{
 	text-decoration: none;
 	color: inherit;
 }
+/* Navigasjonsmeny */
 .nav-ul{
 	background-color: #43a286;
 	overflow: hidden;
@@ -146,6 +153,7 @@ height: 300px;
 width: 400px;
 }
 
+/* Design for seksjon */
 section{
 	line-height: 1.5em;
 	font-size: 0.9em;
@@ -153,6 +161,7 @@ section{
 	width: 75%;
 	margin: 0 auto;
 }
+/* skjult meny */
 .handle{
 	width: 100%;
 	background: #005c48;
